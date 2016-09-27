@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">servicefusion</string>
+    <string name="service_fusion_demo">Service Fusion Demo!</string>
+</resources>
