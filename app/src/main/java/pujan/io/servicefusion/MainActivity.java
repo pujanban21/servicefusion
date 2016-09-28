@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements AuthCallBacks {
         Log.d(TAG, mUID);
         mUserInfo = new UserInfo(mFirstName, mLastName,mDateOfBirth,
                 mZipCode, mEmail,mUID);
-        mFirebaseUtility.userRef().updateChildren(mUserInfo.storeInfo());
+        mFirebaseUtility.currentUserRef().updateChildren(mUserInfo.storeInfo());
     }
 
     @Override

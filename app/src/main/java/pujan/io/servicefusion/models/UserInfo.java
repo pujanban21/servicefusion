@@ -14,64 +14,64 @@ public class UserInfo {
     private int mZipCode;
     private String mEmail;
 
-    public String getmEmail() {
-        return mEmail;
+    //Default Constructor
+    public UserInfo(){
+
     }
-
-    public void setmEmail(String mEmail) {
-        this.mEmail = mEmail;
-    }
-
-    private String mUID;
-
-
     public UserInfo(String firstName ,String lastName, String dateOfBirth, int zipCode, String email, String uID){
         this.mFirstName = firstName;
         this.mLastName = lastName;
         this.mDateOfBirth = dateOfBirth;
         this.mZipCode = zipCode;
         this.mEmail = email;
-        this.mUID = uID;
     }
 
     public Map<String, Object> storeInfo(){
         Map<String, Object> userInfo = new HashMap<>();
-        userInfo.put("FirstName", getmFirstName());
-        userInfo.put("LastName", getmLastName());
-        userInfo.put("DateOfBirth", getmDateOfBirth());
-        userInfo.put("ZipCode", getmZipCode());
-        userInfo.put("Email", getmEmail());
+        userInfo.put("FirstName", getFirstName());
+        userInfo.put("LastName", getLastName());
+        userInfo.put("DateOfBirth", getDateOfBirth());
+        userInfo.put("ZipCode", getZipCode());
+        userInfo.put("Email", getEmail());
 
         return userInfo;
     }
 
-    public String getmFirstName(){return mFirstName;}
+    public String getEmail() {
+        return mEmail;
+    }
 
-    public void setmFirstName(String mFirstName) {
+    public void setEmail(String mEmail) {
+        this.mEmail = mEmail;
+    }
+
+    public String getFirstName(){return mFirstName;}
+
+    public void setFirstName(String mFirstName) {
         this.mFirstName = mFirstName;
     }
 
-    public String getmLastName() {
+    public String getLastName() {
         return mLastName;
     }
 
-    public void setmLastName(String mLastName) {
+    public void setLastName(String mLastName) {
         this.mLastName = mLastName;
     }
 
-    public String getmDateOfBirth() {
+    public String getDateOfBirth() {
         return mDateOfBirth;
     }
 
-    public void setmDateOfBirth(String mDateOfBirth) {
+    public void setDateOfBirth(String mDateOfBirth) {
         this.mDateOfBirth = mDateOfBirth;
     }
 
-    public int getmZipCode() {
+    public int getZipCode() {
         return mZipCode;
     }
 
-    public void setmZipCode(int mZipCode) {
+    public void setZipCode(int mZipCode) {
         this.mZipCode = mZipCode;
     }
 

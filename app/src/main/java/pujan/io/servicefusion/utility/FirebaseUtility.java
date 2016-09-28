@@ -11,6 +11,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class FirebaseUtility{
     private static final String TAG = "FirebaseUtility";
 
+    private String mUID;
+
     private Firebase mRef;
     public FirebaseUtility(){
         mRef =  new Firebase("https://servicefusion-ff8a0.firebaseio.com/");
@@ -21,6 +23,11 @@ public class FirebaseUtility{
 
     public Firebase userRef(){
         return getRef().child("users");
+    }
+
+    public Firebase currentUserRef(){
+        mUID = getUID();
+        return userRef().child(mUID);
     }
 
     public String getUID(){
