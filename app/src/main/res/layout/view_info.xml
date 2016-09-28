@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel_view_header"
+        android:layout_centerHorizontal="true">
+        <pujan.io.servicefusion.components.RobotCondensedBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/service_fusion_red"
+            android:text="@string/service_fusion_demo"
+            android:id="@+id/view_header"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel_view_first_name"
+        android:layout_below="@id/rel_view_header"
+        android:paddingTop="10dp">
+        <pujan.io.servicefusion.components.RobotCondensedBold
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_first_name"
+            android:paddingLeft="10dp"
+            android:textSize="15sp"
+            android:text="First Name:"/>
+        <pujan.io.servicefusion.components.RobotoCondensedRegular
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_first_name_fill"
+            android:hint="First Name"
+            android:textSize="15sp"
+            android:layout_alignEnd="@id/view_first_name"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel_view_last_name"
+        android:layout_below="@id/rel_view_first_name"
+        android:paddingTop="10dp"
+        android:orientation="horizontal">
+        <pujan.io.servicefusion.components.RobotCondensedBold
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_last_name"
+            android:paddingLeft="10dp"
+            android:textSize="15sp"
+            android:text="Last Name:"/>
+        <pujan.io.servicefusion.components.RobotoCondensedRegular
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_last_name_fill"
+            android:hint = "Last Name"
+            android:textSize="15sp"
+            android:layout_alignEnd="@id/view_last_name"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel_view_date_of_birth"
+        android:layout_below="@id/rel_view_last_name"
+        android:paddingTop="10dp">
+        <pujan.io.servicefusion.components.RobotCondensedBold
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_date_of_birth"
+            android:paddingLeft="10dp"
+            android:textSize="15sp"
+            android:text="Date Of Birth:"/>
+        <pujan.io.servicefusion.components.RobotoCondensedRegular
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_date_of_birth_fill"
+            android:hint = "Date Of Birth"
+            android:textSize="15sp"
+            android:layout_alignEnd="@id/view_date_of_birth"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel_view_zip_code"
+        android:layout_below="@id/rel_view_date_of_birth"
+        android:paddingTop="10dp">
+        <pujan.io.servicefusion.components.RobotCondensedBold
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_zip_code"
+            android:paddingLeft="10dp"
+            android:textSize="15sp"
+            android:text="Zip Code:"/>
+        <pujan.io.servicefusion.components.RobotoCondensedRegular
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_zip_code_fill"
+            android:hint="Zip Code"
+            android:textSize="15sp"
+            android:layout_alignEnd="@id/view_zip_code"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel_view_email"
+        android:layout_below="@id/rel_view_zip_code"
+        android:paddingTop="10dp"
+        android:orientation="horizontal">
+        <pujan.io.servicefusion.components.RobotCondensedBold
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_email"
+            android:paddingLeft="10dp"
+            android:textSize="15sp"
+            android:text="Email:"/>
+        <pujan.io.servicefusion.components.RobotoCondensedRegular
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_email_fill"
+            android:hint="Email"
+            android:textSize="15sp"
+            android:layout_alignEnd="@id/view_email"
+            />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel_save"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rel_view_email"
+        android:paddingTop="20dp">
+        <pujan.io.servicefusion.components.RobotCondensedBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_new_user"
+            android:text="ADD NEW USER"
+            android:textColor="@color/service_fusion_red"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+</RelativeLayout>

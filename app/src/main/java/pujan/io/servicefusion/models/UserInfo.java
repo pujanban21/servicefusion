@@ -14,17 +14,26 @@ public class UserInfo {
     private int mZipCode;
     private String mEmail;
 
+    private static UserInfo instance = null;
     //Default Constructor
-    public UserInfo(){
+    private UserInfo(){}
 
+    //Lazy Singleton pattern
+    public static UserInfo getInstance(){
+        if(instance == null){
+            instance = new UserInfo();
+        }
+        return instance;
     }
+
+    /*
     public UserInfo(String firstName ,String lastName, String dateOfBirth, int zipCode, String email, String uID){
         this.mFirstName = firstName;
         this.mLastName = lastName;
         this.mDateOfBirth = dateOfBirth;
         this.mZipCode = zipCode;
         this.mEmail = email;
-    }
+    }*/
 
     public Map<String, Object> storeInfo(){
         Map<String, Object> userInfo = new HashMap<>();

@@ -1,25 +1,22 @@
-package pujan.io.servicefusion;
+package pujan.io.servicefusion.activity;
 
-import android.content.DialogInterface;
-import android.graphics.Point;
-import android.location.Location;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
+import pujan.io.servicefusion.R;
 import pujan.io.servicefusion.authManager.AuthManager;
 import pujan.io.servicefusion.interfaces.AuthCallBacks;
 import pujan.io.servicefusion.models.UserInfo;
 import pujan.io.servicefusion.utility.FirebaseUtility;
 
-public class MainActivity extends AppCompatActivity implements AuthCallBacks {
+public class MainActivity extends Activity implements AuthCallBacks {
     private static final String TAG ="MainActivity";
 
     private String mEmail;
@@ -28,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements AuthCallBacks {
     private String mLastName;
     private int mZipCode;
     private String mDateOfBirth;
-    private String mUID;
 
     private EditText mEmailText;
     private EditText mPasswordText;
@@ -39,18 +35,19 @@ public class MainActivity extends AppCompatActivity implements AuthCallBacks {
     private TextView mSave;
 
     private UserInfo mUserInfo;
-    private AuthCallBacks mAuthCallBacks;
     private AuthManager mAuthManager;
     private FirebaseUtility mFirebaseUtility;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
         Firebase.setAndroidContext(this);
 
         mAuthManager = new AuthManager(this);
-        mAuthManager.SetCallBackAuth(this);
+        mAuthManager.setCallBackAuth(this);
 
         mEmailText = (EditText) findViewById(R.id.email_fill);
         mPasswordText =(EditText) findViewById(R.id.password_fill);
@@ -69,26 +66,27 @@ public class MainActivity extends AppCompatActivity implements AuthCallBacks {
                 mLastName = mLastNameText.getText().toString();
                 mZipCode = Integer.valueOf(mZipCodeText.getText().toString());
                 mDateOfBirth = mDateOfBirthText.getText().toString();
-                Log.d(TAG,mEmail + " " + mPassword);
                 mAuthManager.createUser(mEmail,mPassword);
             }
         });
-
-
     }
 
     @Override
     public void onAuth() {
         mFirebaseUtility = new FirebaseUtility();
-        mUID = mFirebaseUtility.getUID();
-        Log.d(TAG, mUID);
-        mUserInfo = new UserInfo(mFirstName, mLastName,mDateOfBirth,
-                mZipCode, mEmail,mUID);
+        mUserInfo = UserInfo.getInstance();
+        mUserInfo.setFirstName(mFirstName);
+        mUserInfo.setLastName(mLastName);
+        mUserInfo.setDateOfBirth(mDateOfBirth);
+        mUserInfo.setZipCode(mZipCode);
+        mUserInfo.setEmail(mEmail);
         mFirebaseUtility.currentUserRef().updateChildren(mUserInfo.storeInfo());
+
+        startActivity(new Intent(this,ViewInfo.class));
     }
 
     @Override
     public void onError() {
-        Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sing Up Error", Toast.LENGTH_SHORT).show();
     }
 }

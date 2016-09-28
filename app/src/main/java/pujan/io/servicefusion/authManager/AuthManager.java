@@ -32,48 +32,56 @@ public class AuthManager{
             public void onAuth() {
                 //Do nothing
             }
-
             @Override
             public void onError() {
                 //Do nothing
             }
         };
     }
-    public void SetCallBackAuth(AuthCallBacks authCallBacks){
+
+    /**
+     *
+     * @param authCallBacks
+     */
+    public void setCallBackAuth(AuthCallBacks authCallBacks){
         mAuthCallBacks = authCallBacks;
     }
 
+    /**
+     *
+     * @param email
+     * @param password
+     */
     public void createUser(String email, String password){
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(mActivity, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    //TODO, show user info
                     mAuthCallBacks.onAuth();
-
                 } else{
-                    Toast.makeText(mActivity, "Sign up Failed",Toast.LENGTH_SHORT).show();
                     mAuthCallBacks.onError();
                 }
             }
         });
     }
 
+    /**
+     *
+     * @param email
+     * @param password
     public void signIn(String email, String password){
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(mActivity, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    //TODO, show user info
                     mAuthCallBacks.onAuth();
                 } else{
-                    Toast.makeText(mActivity, "Invalid Email or Password",
-                            Toast.LENGTH_SHORT).show();
                     mAuthCallBacks.onError();
                 }
             }
         });
     }
+    */
 }

@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="pujan.io.servicefusion.MainActivity">
+    tools:context=".activity.MainActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -180,7 +180,8 @@
             android:layout_centerHorizontal="true"
             />
     </RelativeLayout>
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/rel_save"
@@ -194,5 +195,5 @@
             android:text="SAVE"
             android:textColor="@color/service_fusion_red"
             android:textSize="20sp"/>
-    </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>
