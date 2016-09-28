@@ -35,6 +35,7 @@ public class UserInfo {
         this.mEmail = email;
     }*/
 
+    //Hash Map to store the information into firebase
     public Map<String, Object> storeInfo(){
         Map<String, Object> userInfo = new HashMap<>();
         userInfo.put("FirstName", getFirstName());

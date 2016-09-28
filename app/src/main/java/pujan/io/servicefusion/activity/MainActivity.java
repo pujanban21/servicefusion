@@ -71,6 +71,7 @@ public class MainActivity extends Activity implements AuthCallBacks {
         });
     }
 
+    //Upon email/password authentication, store the information in the firebase database
     @Override
     public void onAuth() {
         mFirebaseUtility = new FirebaseUtility();

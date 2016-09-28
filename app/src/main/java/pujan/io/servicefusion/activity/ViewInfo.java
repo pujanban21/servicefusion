@@ -24,6 +24,7 @@ public class ViewInfo extends Activity {
 
     private UserInfo mUserInfo;
 
+    //Inflates the view_info layout showing the current user information
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -41,6 +42,8 @@ public class ViewInfo extends Activity {
         viewZipCode.setText(mUserInfo.getZipCode());
         viewEmail.setText(mUserInfo.getEmail());
 
+        //Goes back to Main Activity if add new user if pressed/clicked.
+        //Finishes Current Activity
         addNewUser = (RobotCondensedBold) findViewById(R.id.add_new_user);
         addNewUser.setOnClickListener(new View.OnClickListener() {
             @Override
