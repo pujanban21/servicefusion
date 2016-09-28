@@ -23,7 +23,7 @@ public class MainActivity extends Activity implements AuthCallBacks {
     private String mPassword;
     private String mFirstName;
     private String mLastName;
-    private int mZipCode;
+    private String mZipCode;
     private String mDateOfBirth;
 
     private EditText mEmailText;
@@ -64,7 +64,7 @@ public class MainActivity extends Activity implements AuthCallBacks {
                 mPassword = mPasswordText.getText().toString();
                 mFirstName = mFirstNameText.getText().toString();
                 mLastName = mLastNameText.getText().toString();
-                mZipCode = Integer.valueOf(mZipCodeText.getText().toString());
+                mZipCode = mZipCodeText.getText().toString();
                 mDateOfBirth = mDateOfBirthText.getText().toString();
                 mAuthManager.createUser(mEmail,mPassword);
             }
@@ -87,6 +87,6 @@ public class MainActivity extends Activity implements AuthCallBacks {
 
     @Override
     public void onError() {
-        Toast.makeText(this, "Sing Up Error", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sign Up Error", Toast.LENGTH_SHORT).show();
     }
 }

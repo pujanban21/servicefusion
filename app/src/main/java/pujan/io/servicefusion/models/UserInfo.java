@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by pujan on 9/23/2016.
+ * Created by pujan on 9/26/2016.
  */
 public class UserInfo {
     private static final String TAG = "UserInfo";
     private String mFirstName;
     private String mLastName;
     private String mDateOfBirth;
-    private int mZipCode;
+    private String mZipCode;
     private String mEmail;
 
     private static UserInfo instance = null;
@@ -76,11 +76,11 @@ public class UserInfo {
         this.mDateOfBirth = mDateOfBirth;
     }
 
-    public int getZipCode() {
+    public String  getZipCode() {
         return mZipCode;
     }
 
-    public void setZipCode(int mZipCode) {
+    public void setZipCode(String mZipCode) {
         this.mZipCode = mZipCode;
     }
 

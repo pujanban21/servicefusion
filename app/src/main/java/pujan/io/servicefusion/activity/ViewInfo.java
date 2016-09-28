@@ -38,7 +38,7 @@ public class ViewInfo extends Activity {
         viewFirstName.setText(mUserInfo.getFirstName());
         viewLastName.setText(mUserInfo.getLastName());
         viewDateOfBirth.setText(mUserInfo.getDateOfBirth());
-        viewZipCode.setText(String.valueOf(mUserInfo.getZipCode()));
+        viewZipCode.setText(mUserInfo.getZipCode());
         viewEmail.setText(mUserInfo.getEmail());
 
         addNewUser = (RobotCondensedBold) findViewById(R.id.add_new_user);
