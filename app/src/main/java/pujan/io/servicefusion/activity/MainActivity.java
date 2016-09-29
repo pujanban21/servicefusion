@@ -12,6 +12,7 @@ import com.firebase.client.Firebase;
 
 import pujan.io.servicefusion.R;
 import pujan.io.servicefusion.authManager.AuthManager;
+import pujan.io.servicefusion.formValidation.FormValidator;
 import pujan.io.servicefusion.interfaces.AuthCallBacks;
 import pujan.io.servicefusion.models.UserInfo;
 import pujan.io.servicefusion.utility.FirebaseUtility;
@@ -37,6 +38,7 @@ public class MainActivity extends Activity implements AuthCallBacks {
     private UserInfo mUserInfo;
     private AuthManager mAuthManager;
     private FirebaseUtility mFirebaseUtility;
+    private FormValidator mFormValidator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class MainActivity extends Activity implements AuthCallBacks {
 
         mAuthManager = new AuthManager(this);
         mAuthManager.setCallBackAuth(this);
+        mFormValidator = new FormValidator(this);
 
         mEmailText = (EditText) findViewById(R.id.email_fill);
         mPasswordText =(EditText) findViewById(R.id.password_fill);
@@ -66,7 +69,10 @@ public class MainActivity extends Activity implements AuthCallBacks {
                 mLastName = mLastNameText.getText().toString();
                 mZipCode = mZipCodeText.getText().toString();
                 mDateOfBirth = mDateOfBirthText.getText().toString();
-                mAuthManager.createUser(mEmail,mPassword);
+
+                if(mFormValidator.validateForm(mEmail, mPassword)) {
+                    mAuthManager.createUser(mEmail, mPassword);
+                }
             }
         });
     }
