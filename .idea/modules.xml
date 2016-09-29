@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/servicefusion.iml" filepath="$PROJECT_DIR$/servicefusion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servicefusiondemo.iml" filepath="$PROJECT_DIR$/servicefusiondemo.iml" />
     </modules>
   </component>
 </project>
