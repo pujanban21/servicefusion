@@ -8,3 +8,6 @@
 ##3. Run the project either in emulator or your android device.
 ##4. Make sure the email and password field are not empty to prevent from app crashing (Cannot have null value for email and password for fiebase user authenication).
 ##4. Enjoy
+
+#Update
+##Form Validator for email and passwor introduced to prevent accidental empty input field

@@ -33,7 +33,7 @@ public class FormValidator {
         if (!matcher.matches() || mEmail.length()<=0) {
             Toast.makeText(mActivity, "Invalid Email", Toast.LENGTH_SHORT).show();
         }else if (mPassword.length() < PASSWORD_VALIDATOR) {
-            Toast.makeText(mActivity, "Password length must be greater than 5 characters",
+            Toast.makeText(mActivity, "Minimum password length is 6",
                     Toast.LENGTH_SHORT).show();
         }else {
             mNotify = true;
